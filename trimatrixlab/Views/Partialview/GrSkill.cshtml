@@ -1,0 +1,40 @@
+﻿@model IEnumerable<trimatrixlab.Models.Skill_GrSkillModel>
+
+<section id="skills" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/mixer.png" alt="demo">Skills</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="skills-card" class="card">
+                    <div class="card-content">
+                        <div class="row">
+
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <div class="skills-title">
+                                        <h6 class="text-center">@item.Group.TieuDe</h6>
+                                    </div>
+
+                                    @foreach (var skill in item.Skills)
+                                    {
+                                        <div class="skillbar" data-percent="@skill.PhanTram%">
+                                            <div class="skillbar-title"><span>@skill.Ten</span></div>
+                                            <div class="skillbar-bar"> 
+                                                @*<small style=" color: red; ">LaLa nè</small>*@
+                                            </div>
+                                            <div class="skill-bar-percent">@skill.PhanTram%</div>
+                                        </div>
+                                    }
+                                </div>
+                            }                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<trimatrixlab.Models.GrPortfolioModel>
+
+@foreach (var item in Model)
+{
+    <li class="waves-effect list-shuffle">
+        <a class="cate" href="#@item.IDGrPortfolios" data-toggle="tab">@item.TieuDe</a>
+    </li>
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<trimatrixlab.Models.InterestModel>
+
+
+<section id="interest" class="section">
+    <div class="container">
+        <!-- SECTION TITLE -->
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/heart.png" alt="demo">Interest</h4>
+        </div>
+
+        <div id="interest-card" class="card">
+            <!--INTEREST TEXT-->
+            <div class="card-content">
+                <p>
+                    @Html.Action("Interest", "Partialview")
+
+                </p>
+            </div>
+
+            <!--INTEREST ICONS-->
+            <div class="row no-gutters">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-2 col-sm-4 col-xs-6  box text-center">
+                        <div class="@item.Background">
+                            <i class="@item.Icon"></i>
+                            <span>@item.TenIcon</span>
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+

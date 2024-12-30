@@ -1,0 +1,158 @@
+﻿@model trimatrixlab.DBContext.tbAbout
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>QUẢN LÝ GIỚI THIỆU CHUNG</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Elements</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SỬA THÔNG TIN GIỚI THIỆU</h5>
+
+                        <!-- General Form Elements -->
+                        <form action="/admin/aabouts/edit" method="post" enctype="multipart/form-data">
+                            @Html.HiddenFor(model => model.IDAbout)
+                            @Html.HiddenFor(model => model.Image)
+                            @Html.HiddenFor(model => model.Poster)
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Hình Ảnh</label>
+                                <div class="col-sm-10">
+                                    <img src="@Model.Image" width="180" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Cập Nhật Hình Ảnh</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="Editfile" id="formFile">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Họ Tên</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Name" name="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Nội Dung</label>
+                                <div class="col-sm-10">
+                                    <textarea name="Contents" class="form-control ckeditor" rows="5"> @Model.Contents</textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Email" name="Email" class="form-control">
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Web</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Web" name="Web" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Địa Chỉ</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Address" name="Address" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Số Điện Thoại</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Phone" name="Phone" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputDate" class="col-sm-2 col-form-label">Ngày/Tháng/Năm Sinh</label>
+                                <div class="col-sm-10">
+                                    @if (Model.DateOfBirth.HasValue) // Kiểm tra xem ThoiGian có giá trị hay không
+                                    {
+                                        <!-- Chỉ hiển thị ngày tháng năm -->
+                                        @*<span class="form-control">@Model.DateOfBirth.Value.ToString("dd/MM/yyyy")</span>*@
+                                    <input type="date" id="inputDate" name="DateOfBirth" class="form-control"
+                                           value="@(Model.DateOfBirth.HasValue ? Model.DateOfBirth.Value.ToString("yyyy-MM-dd") : "")" />
+                                    }
+                                    else
+                                    {
+                                        <input type="date" id="inputDate" name="DateOfBirth" class="form-control" placeholder="Chọn ngày tháng năm" />
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Mô Tả</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Descriptions" name="Descriptions" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Zip Code</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.ZipCode" name="ZipCode" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Link Bài Viết</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" name="Link" value="@Model.Link" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Mô Tả Sở Thích</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.MoTaInterest" name="MoTaInterest" class="form-control ckeditor" rows="5">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Poster</label>
+                                <div class="col-sm-10">
+                                    <img src="@Model.Poster" width="180" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Cập Nhật Poster</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="Editfile1" id="formFile">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                                    <a href="/admin/aabouts" class="btn btn-danger"> Quay Lại</a>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+</main>

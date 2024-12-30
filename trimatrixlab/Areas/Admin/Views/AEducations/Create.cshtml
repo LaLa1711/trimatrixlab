@@ -1,0 +1,98 @@
+﻿@model trimatrixlab.DBContext.tbEducation
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>QUẢN LÝ EDUCATION</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Elements</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">THÊM MỚI THÔNG TIN EDUCATION</h5>
+
+                        <!-- General Form Elements -->
+                        <form action="/admin/AEducations/create" method="post" enctype="multipart/form-data">
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Hình Ảnh</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="file" id="formFile">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputNumber" class="col-sm-2 col-form-label">Hình Ảnh Icon</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="file" name="file1" id="formFile">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Tiêu Đề</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.TieuDe" name="TieuDe" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Tiêu Đề Con</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.TieuDeCon" name="TieuDeCon" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Mô Tả</label>
+                                <div class="col-sm-10">
+                                    <textarea name="MoTa" class="form-control ckeditor" rows="5"> @Model.MoTa</textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Nội Dung</label>
+                                <div class="col-sm-10">
+                                    <textarea name="NoiDung" class="form-control ckeditor" rows="5"> @Model.NoiDung</textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputDate" class="col-sm-2 col-form-label">Ngày Bắt Đầu</label>
+                                <div class="col-sm-10">
+                                    <input type="date" value="@Model.NgayBatDau?.ToString(" dd-MM-yyyy")" name="NgayBatDau" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputDate" class="col-sm-2 col-form-label">Ngày Kết Thúc</label>
+                                <div class="col-sm-10">
+                                    <input type="date" value="@Model.NgayKetThuc?.ToString(" dd-MM-yyyy")" name="NgayKetThuc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Thêm Mới</button>
+                                    <a href="/admin/AEducations" class="btn btn-danger"> Quay Lại</a>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+</main>

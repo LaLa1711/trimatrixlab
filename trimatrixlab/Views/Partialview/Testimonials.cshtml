@@ -1,0 +1,52 @@
+﻿@model IEnumerable<trimatrixlab.Models.TestimonialModel>
+
+<section id="testimonials" class="section">
+    <div class="container">
+        <!-- SECTION TITLE -->
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/handshake.png" alt="demo">Testimonials</h4>
+        </div>
+        <div id="testimonials-card" class="row card">
+            <div class="col-md-12 col-xs-12">
+
+                <!-- SLIDER STRUCTURE -->
+                <div id="clients-slider" class="swiper-container swiper-container-clients">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            <div class="swiper-slide">
+                                <div class="col-md-12">
+                                    <div class="client-img center-block">
+                                        <img alt="client-image" class="center-block" src="@item.HinhAnh">
+                                    </div>
+                                    <blockquote>
+                                        @item.MoTa
+                                        <cite>@item.Ten</cite>
+                                    </blockquote>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-clients"></div>
+                </div>
+            </div>
+        </div>
+        <div id="clients">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="clients-wrap">
+                            <!--CLIENT LOGO'S-->
+                            <ul id="clients-list" class="clearfix">
+                                @Html.Action("SliderIcons", "Partialview")
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

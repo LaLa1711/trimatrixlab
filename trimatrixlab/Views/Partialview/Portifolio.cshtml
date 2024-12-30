@@ -1,0 +1,35 @@
+﻿@model IEnumerable<trimatrixlab.Models.Port_GrPortModel>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    if (i == 0)
+    {
+        <div class="col-md-4 col-sm-12 col-xs-12 grid big inLeft" style="display: block;">
+            <figure class="port-effect-scale">
+                <img src="@Model.ToList()[i].Image" class="img-responsive" alt="portfolio-demo">
+                <figcaption>
+                    <h2><span></span></h2>
+                    <p></p>
+                    <a href="@Model.ToList()[i].Image" class="popup-image" data-effect="mfp-3d-unfold">
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12 grid inRight" style="display: block;">
+            <figure class="port-effect-scale">
+                <img src="@Model.ToList()[i].Image" class="img-responsive" alt="portfolio-demo">
+                <figcaption>
+                    <h2>
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>Lightbox <span> Video</span>
+                    </h2>
+                    <p>I designed this for a client for his cafe.</p>
+                    <a class="popup-vimeo" href="https://vimeo.com/45830194">View more</a>
+                </figcaption>
+            </figure>
+        </div>
+    }
+}
+

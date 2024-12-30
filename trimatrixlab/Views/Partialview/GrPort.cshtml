@@ -1,0 +1,34 @@
+﻿@model IEnumerable<trimatrixlab.Models.GrPortfolioModel>
+<section id="portfolios" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/safe.png" alt="demo">Portfolios</h4>
+        </div>
+        <div id="portfolios-card" class="row">
+            <ul class="nav nav-tabs">
+                <li class="active waves-effect list-shuffle">
+                    <a id="all-sample" class="active" href="#all" data-toggle="tab">ALL</a>
+                </li>
+                @Html.Action("Group", "Partialview")
+
+            </ul>
+            <div class="tab-content">
+                <div id="all"></div>
+                @foreach (var item in Model)
+                {
+                    <div id="@item.IDGrPortfolios">
+                        @Html.Action("Portifolio", "Partialview", new {id = item.IDGrPortfolios})
+
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button id="add-more" class="center-block btn-large waves-effect">
+                        <i id="port-add-icon" class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

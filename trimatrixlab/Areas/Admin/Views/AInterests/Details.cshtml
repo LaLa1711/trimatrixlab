@@ -1,0 +1,115 @@
+﻿@model trimatrixlab.DBContext.tbInterest
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>QUẢN LÝ SỞ THÍCH</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Elements</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">THÔNG TIN SỞ THÍCH</h5>
+
+                        <!-- General Form Elements -->
+                        <form action="/admin/AInterests/edit/@Model.IDInterest" method="post" enctype="multipart/form-data">
+                            @Html.HiddenFor(model => model.IDInterest)
+                            @*<div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label">Nhóm Kỹ Năng</label>
+                                    <div class="col-sm-10">
+                                        <span class="form-control" name="IDGrSkill" id="SkillSelect">
+                                            <option value="">----- Không có nhóm kỹ năng -----</option>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                <script>
+                                $(document).ready(function () {
+                                    var IDGr_Skill = '@Model.IDGrSkill';
+                                    if (IDGr_Skill) {
+                                        $.get('@Url.Action("GetSkill", "ASkills")', { id: IDGr_Skill }, function (data) {
+                                            $('#SkillSelect').html(data);
+                                        });
+                                    }
+                                });
+                                </script>*@
+
+                            @*Cách 2*@                           
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Tên Sở Thích</label>
+                                <div class="col-sm-10">
+                                    <div class="form-control">
+                                        @Html.Raw(Model.TenIcon)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Sở Thích</label>
+                                <div class="col-sm-10">
+                                    <div class="form-control">
+                                        @Html.Raw(Model.Icon)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Background</label>
+                                <div class="col-sm-10">
+                                    <div class="form-control">
+                                        @Html.Raw(Model.Background)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Hide</label>
+                                <div class="col-sm-2">
+                                    <div class="form-control text-center">
+                                        <strong>
+
+                                            @if (Model.Hide != true)
+                                            {
+                                                <span>Hiện</span>
+                                            }
+                                            else
+                                            {
+                                                <span>ẨN </span>
+                                            }
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <a href="/admin/AInterests" class="btn btn-danger"> Quay Lại</a>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+</main>

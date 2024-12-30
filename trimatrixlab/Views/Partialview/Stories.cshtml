@@ -1,0 +1,55 @@
+﻿@model IEnumerable<trimatrixlab.Models.StoryModel>
+
+
+<section id="blog" class="section">
+    <div class="container">
+        <!-- SECTION TITLE -->
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/post-it.png" alt="demo">Story</h4>
+        </div>
+        <div id="blog-card" class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card">
+
+                    @foreach (var item in Model)
+                    {
+                        var blogClass = @item.IDStory % 2 == 0 ? "even" : "odd";
+                        <div class="blog @blogClass">
+                            <!--IMAGE-->
+                            <div class="image">
+                                <img alt="blog-image" src="@item.HinhAnh">
+                                <div class="image-overlay">
+                                    <div class="comments">
+                                        <i class="fa fa-user"></i> @item.Ten
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>
+                                            @item.NgayDang.Value.ToString("MMM dd, yyyy")
+                                        </span>
+                                        @*<i class="fa fa-comments"></i> 168*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DETAILS-->
+                            <div class="content">
+                                @*<ol class="breadcrumb">
+                                    <li><a href="#">Frontend</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li class="active">Material</li>
+                                </ol>*@
+                                <h6>@item.TieuDe</h6>
+                                <p>
+                                    @Html.Raw(item.NoiDung)
+                                </p>
+                                <a class="forward" href="@item.Link">Read More</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

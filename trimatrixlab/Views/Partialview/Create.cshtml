@@ -1,0 +1,183 @@
+﻿@model trimatrixlab.DBContext.tbContact
+
+
+<section id="contact" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h4 class="text-uppercase text-center"><img src="/Content/images/envelope.png" alt="demo">Contact</h4>
+        </div>
+        <div class="row">
+            <div id="contact-card" class="col-md-5 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-content">
+                        <form name="c-form" method="post" enctype="multipart/form-data" action="/PartialView/Create" onsubmit="return XacNhan()">
+                            <div class="input-field">
+                                <input id="Ten" autocomplete="off" type="text" class="validate" name="Ten" required>
+                                <label for="Ten">Họ Tên</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="Phone" autocomplete="off" type="text" class="validate" name="Phone">
+                                <label for="Phone">Số Điện Thoại</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="Email" autocomplete="off" type="email" class="validate" name="Email" required>
+                                <label for="Email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="NoiDung" autocomplete="off" class="materialize-textarea" name="NoiDung" required></textarea>
+                                <label for="NoiDung">Message</label>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Gửi</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="form-loader" class="progress is-hidden">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7 col-sm-12 col-xs-12">
+                <div id="map-card" class="card" style="height: 417px">
+                        <iframe class="position-absolute"
+                                style="
+                                      width: 100%;
+                                      height: 100%;
+                                      z-index: 10;
+                                      top: 0;
+                                      left: 0;
+                                      border: 0;
+                                    "
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1809606135953!2d106.700665875607!3d10.797448289352628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752921767a24cb%3A0x952d688cf2bc99bc!2sUEF-Faculty%20of%20International%20Relations!5e0!3m2!1svi!2sus!4v1731061697361!5m2!1svi!2sus"></iframe>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CSS cho hiệu ứng rung -->
+<!-- Hiệu ứng EROR -->
+<div id="hashtag-effect" class="hashtag-effect" style="display: none;">EROR</div>
+
+<!-- CSS cho hiệu ứng EROR và rung -->
+<style>
+    .shake {
+        animation: shake 0.6s;
+        animation-iteration-count: 3;
+    }
+
+    @@keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
+
+    .hashtag-effect {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        font-weight: bold;
+        color: red;
+        opacity: 0;
+        animation: pulse 1.5s infinite;
+    }
+
+    @@keyframes pulse {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+</style>
+
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script>
+    function Show() {
+        const contact = {
+            Ten: "",
+            Email: "",
+            Phone: "",
+            NoiDung: ""
+        };
+        contact.Ten = $("#Ten").val();
+        contact.Email = $("#Email").val();
+        contact.Phone = $("#Phone").val();
+        contact.NoiDung = $("#NoiDung").val();
+        $.ajax({
+            type: 'POST',
+            url: '/Partialview/GetJson',
+            data: { obj: contact },
+            success: function (data) {
+                if (data.Phone != null) {
+                    alert("Thực hiện thành công!");
+                    //pháo hoa
+                    fireConfetti();
+                    //xóa dữ liệu
+                    $("#Ten").val("");
+                    $("#Email").val("");
+                    $("#Phone").val("");
+                    $("#NoiDung").val("");
+                    hideHashtagEffect();
+                }
+                else {
+                    //alert("Thực hiện không thành công!");
+                    displayHashtagEffect("Thực hiện không thành công!"); // Hiển thị EROR khi có lỗi
+
+                }
+            },
+            error: function (ex) {
+                //alert("Khong thể thực hiện");
+                displayHashtagEffect("Khong thể thực hiện"); // Hiển thị EROR khi có lỗi
+
+            }
+        });
+        return false;
+    }
+    function XacNhan() {
+        let cf = confirm("Bạn có chắc thực hiện???");
+        if (cf) {
+            Show();
+        }
+        return false;
+    }
+    // Hàm tạo pháo hoa
+    function fireConfetti() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+
+    // Hàm hiển thị EROR
+    function displayHashtagEffect(message) {
+        $("#hashtag-effect").text("EROR").show();
+        applyShakeEffect(); // Thêm hiệu ứng rung vào form
+        setTimeout(() => {
+            $("#hashtag-effect").fadeOut(1000);
+        }, 2000);
+    }
+
+    // Hàm ẩn EROR
+    function hideHashtagEffect() {
+        $("#hashtag-effect").fadeOut(1000); // Ẩn EROR
+    }
+
+    // Hàm thêm hiệu ứng rung vào form
+    function applyShakeEffect() {
+        const form = document.querySelector("form[name='c-form']");
+        form.classList.add("shake");
+
+        // Loại bỏ lớp shake sau khi hiệu ứng kết thúc
+        setTimeout(() => {
+            form.classList.remove("shake");
+        }, 1800); // Thời gian khớp với animation trong CSS
+    }
+</script>
+

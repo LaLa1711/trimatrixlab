@@ -1,0 +1,79 @@
+﻿@model trimatrixlab.DBContext.tbGrPortfolio
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>QUẢN LÝ NHÓM ALBUMS</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Elements</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SỬA THÔNG TIN NHÓM ALBUMS</h5>
+
+                        <!-- General Form Elements -->
+                        <form action="/admin/AGrPortfolios/edit" method="post" enctype="multipart/form-data">
+                            @Html.HiddenFor(model => model.IDGrPortfolios)
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Nhóm Albums</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.TieuDe" name="TieuDe" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Trạng Thái</label>
+                                <div class="col-sm-2">
+                                    <select id="hideSelect" class="form-select" name="Hide" aria-label="Default select example">
+                                        <option value="default">Select...</option>
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <script>
+                                const currentValue = "@Model.Hide".toLowerCase();
+                                const hideSelect = document.getElementById('hideSelect');
+                                if (currentValue === "true") {
+                                    hideSelect.value = "true";
+                                } else if (currentValue === "false") {
+                                    hideSelect.value = "false";
+                                } else {
+                                    hideSelect.value = "default";
+                                }
+                            </script>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                                    <a href="/admin/AGrPortfolios" class="btn btn-danger"> Quay Lại</a>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+</main>

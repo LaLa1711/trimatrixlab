@@ -1,0 +1,9 @@
+﻿@model IEnumerable<trimatrixlab.Models.SocialModel>
+
+<div class="links">
+    @foreach (var item in Model)
+    {
+        <a href="@item.LinkSocial" class="@item.Button"><i class="@item.Image"></i></a>
+    }
+
+</div>

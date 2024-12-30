@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="trimatrixlab_CVModelStoreContainer" CdmEntityContainer="trimatrixlab_CVEntities">
+    <EntitySetMapping Name="tbContacts">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbContact">
+        <MappingFragment StoreEntitySet="tbContact">
+          <ScalarProperty Name="IDContact" ColumnName="IDContact" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbGrPortfolios">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbGrPortfolio">
+        <MappingFragment StoreEntitySet="tbGrPortfolios">
+          <ScalarProperty Name="IDGrPortfolios" ColumnName="IDGrPortfolios" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbGrSkills">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbGrSkill">
+        <MappingFragment StoreEntitySet="tbGrSkills">
+          <ScalarProperty Name="IDGrSkill" ColumnName="IDGrSkill" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSkills">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbSkill">
+        <MappingFragment StoreEntitySet="tbSkills">
+          <ScalarProperty Name="IDSkill" ColumnName="IDSkill" />
+          <ScalarProperty Name="IDGrSkill" ColumnName="IDGrSkill" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="PhanTram" ColumnName="PhanTram" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSliderIcons">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbSliderIcon">
+        <MappingFragment StoreEntitySet="tbSliderIcons">
+          <ScalarProperty Name="IDSliderIcon" ColumnName="IDSliderIcon" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTestimonials">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbTestimonial">
+        <MappingFragment StoreEntitySet="tbTestimonials">
+          <ScalarProperty Name="IDTestimonial" ColumnName="IDTestimonial" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAbouts">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbAbout">
+        <MappingFragment StoreEntitySet="tbAbout">
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="MoTaInterest" ColumnName="MoTaInterest" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IDAbout" ColumnName="IDAbout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSocials">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbSocial">
+        <MappingFragment StoreEntitySet="tbSocial">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Button" ColumnName="Button" />
+          <ScalarProperty Name="LinkSocial" ColumnName="LinkSocial" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IDSocial" ColumnName="IDSocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInterests">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbInterest">
+        <MappingFragment StoreEntitySet="tbInterest">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Background" ColumnName="Background" />
+          <ScalarProperty Name="TenIcon" ColumnName="TenIcon" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="IDInterest" ColumnName="IDInterest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEducations">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbEducation">
+        <MappingFragment StoreEntitySet="tbEducation">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="TieuDeCon" ColumnName="TieuDeCon" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbExperiences">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbExperience">
+        <MappingFragment StoreEntitySet="tbExperience">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="TieuDeCon" ColumnName="TieuDeCon" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="IDExperience" ColumnName="IDExperience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbStories">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbStory">
+        <MappingFragment StoreEntitySet="tbStory">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="IDStory" ColumnName="IDStory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPortfolios">
+      <EntityTypeMapping TypeName="trimatrixlab_CVModel.tbPortfolio">
+        <MappingFragment StoreEntitySet="tbPortfolios">
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Portfolio" ColumnName="Portfolio" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="IDGrPortfolio" ColumnName="IDGrPortfolio" />
+          <ScalarProperty Name="IDPortfolio" ColumnName="IDPortfolio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

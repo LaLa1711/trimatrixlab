@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trimatrixlab_CVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbContact">
+    <Key>
+      <PropertyRef Name="IDContact" />
+    </Key>
+    <Property Name="IDContact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbGrPortfolio">
+    <Key>
+      <PropertyRef Name="IDGrPortfolios" />
+    </Key>
+    <Property Name="IDGrPortfolios" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbGrSkill">
+    <Key>
+      <PropertyRef Name="IDGrSkill" />
+    </Key>
+    <Property Name="IDGrSkill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbSkill">
+    <Key>
+      <PropertyRef Name="IDSkill" />
+    </Key>
+    <Property Name="IDSkill" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDGrSkill" Type="Int32" />
+    <Property Name="Ten" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PhanTram" Type="Int32" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbSliderIcon">
+    <Key>
+      <PropertyRef Name="IDSliderIcon" />
+    </Key>
+    <Property Name="IDSliderIcon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HinhAnh" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbTestimonial">
+    <Key>
+      <PropertyRef Name="IDTestimonial" />
+    </Key>
+    <Property Name="IDTestimonial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="trimatrixlab_CVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbContacts" EntityType="Self.tbContact" />
+    <EntitySet Name="tbGrPortfolios" EntityType="Self.tbGrPortfolio" />
+    <EntitySet Name="tbGrSkills" EntityType="Self.tbGrSkill" />
+    <EntitySet Name="tbSkills" EntityType="Self.tbSkill" />
+    <EntitySet Name="tbSliderIcons" EntityType="Self.tbSliderIcon" />
+    <EntitySet Name="tbTestimonials" EntityType="Self.tbTestimonial" />
+    <EntitySet Name="tbAbouts" EntityType="trimatrixlab_CVModel.tbAbout" />
+    <EntitySet Name="tbSocials" EntityType="trimatrixlab_CVModel.tbSocial" />
+    <EntitySet Name="tbInterests" EntityType="trimatrixlab_CVModel.tbInterest" />
+    <EntitySet Name="tbEducations" EntityType="trimatrixlab_CVModel.tbEducation" />
+    <EntitySet Name="tbExperiences" EntityType="trimatrixlab_CVModel.tbExperience" />
+    <EntitySet Name="tbStories" EntityType="trimatrixlab_CVModel.tbStory" />
+    <EntitySet Name="tbPortfolios" EntityType="trimatrixlab_CVModel.tbPortfolio" />
+  </EntityContainer>
+  <EntityType Name="tbAbout">
+    <Key>
+      <PropertyRef Name="IDAbout" />
+    </Key>
+    <Property Name="IDAbout" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Web" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MoTaInterest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Poster" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbSocial">
+    <Key>
+      <PropertyRef Name="IDSocial" />
+    </Key>
+    <Property Name="IDSocial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="LinkSocial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Button" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbInterest">
+    <Key>
+      <PropertyRef Name="IDInterest" />
+    </Key>
+    <Property Name="IDInterest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Icon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TenIcon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Background" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbEducation">
+    <Key>
+      <PropertyRef Name="IDEducation" />
+    </Key>
+    <Property Name="IDEducation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TieuDeCon" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="HinhAnh" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Icon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbExperience">
+    <Key>
+      <PropertyRef Name="IDExperience" />
+    </Key>
+    <Property Name="IDExperience" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TieuDeCon" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="HinhAnh" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Icon" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbStory">
+    <Key>
+      <PropertyRef Name="IDStory" />
+    </Key>
+    <Property Name="IDStory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Ten" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDang" Type="DateTime" Precision="0" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tbPortfolio">
+    <Key>
+      <PropertyRef Name="IDPortfolio" />
+    </Key>
+    <Property Name="IDPortfolio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDGrPortfolio" Type="Int32" />
+    <Property Name="TieuDe" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Portfolio" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Hide" Type="Boolean" />
+  </EntityType>
+</Schema>

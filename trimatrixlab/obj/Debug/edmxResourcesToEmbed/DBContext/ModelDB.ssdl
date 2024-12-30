@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trimatrixlab_CVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbAbout">
+    <Key>
+      <PropertyRef Name="IDAbout" />
+    </Key>
+    <Property Name="IDAbout" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Contents" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Web" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Descriptions" Type="nvarchar(max)" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="20" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="Link" Type="varchar" MaxLength="150" />
+    <Property Name="MoTaInterest" Type="nvarchar(max)" />
+    <Property Name="Poster" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbContact">
+    <Key>
+      <PropertyRef Name="IDContact" />
+    </Key>
+    <Property Name="IDContact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbEducation">
+    <Key>
+      <PropertyRef Name="IDEducation" />
+    </Key>
+    <Property Name="IDEducation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="TieuDeCon" Type="nvarchar" MaxLength="150" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NgayBatDau" Type="date" />
+    <Property Name="NgayKetThuc" Type="date" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="150" />
+    <Property Name="Icon" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbExperience">
+    <Key>
+      <PropertyRef Name="IDExperience" />
+    </Key>
+    <Property Name="IDExperience" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="TieuDeCon" Type="nvarchar" MaxLength="150" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NgayBatDau" Type="date" />
+    <Property Name="NgayKetThuc" Type="date" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="150" />
+    <Property Name="Icon" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbGrPortfolios">
+    <Key>
+      <PropertyRef Name="IDGrPortfolios" />
+    </Key>
+    <Property Name="IDGrPortfolios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbGrSkills">
+    <Key>
+      <PropertyRef Name="IDGrSkill" />
+    </Key>
+    <Property Name="IDGrSkill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbInterest">
+    <Key>
+      <PropertyRef Name="IDInterest" />
+    </Key>
+    <Property Name="IDInterest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Icon" Type="varchar" MaxLength="150" />
+    <Property Name="TenIcon" Type="varchar" MaxLength="150" />
+    <Property Name="Background" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbPortfolios">
+    <Key>
+      <PropertyRef Name="IDPortfolio" />
+    </Key>
+    <Property Name="IDPortfolio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDGrPortfolio" Type="int" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Portfolio" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image" Type="varchar" MaxLength="150" />
+    <Property Name="Link" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbSkills">
+    <Key>
+      <PropertyRef Name="IDSkill" />
+    </Key>
+    <Property Name="IDSkill" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDGrSkill" Type="int" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="300" />
+    <Property Name="PhanTram" Type="int" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbSliderIcons">
+    <Key>
+      <PropertyRef Name="IDSliderIcon" />
+    </Key>
+    <Property Name="IDSliderIcon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="150" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbSocial">
+    <Key>
+      <PropertyRef Name="IDSocial" />
+    </Key>
+    <Property Name="IDSocial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varchar" MaxLength="150" />
+    <Property Name="LinkSocial" Type="varchar" MaxLength="150" />
+    <Property Name="Button" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbStory">
+    <Key>
+      <PropertyRef Name="IDStory" />
+    </Key>
+    <Property Name="IDStory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="150" />
+    <Property Name="Link" Type="varchar" MaxLength="150" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="150" />
+    <Property Name="NgayDang" Type="date" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbTestimonials">
+    <Key>
+      <PropertyRef Name="IDTestimonial" />
+    </Key>
+    <Property Name="IDTestimonial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="150" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="HinhAnh" Type="varchar" MaxLength="150" />
+    <Property Name="Hide" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="trimatrixlab_CVModelStoreContainer">
+    <EntitySet Name="tbAbout" EntityType="Self.tbAbout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbContact" EntityType="Self.tbContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEducation" EntityType="Self.tbEducation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbExperience" EntityType="Self.tbExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbGrPortfolios" EntityType="Self.tbGrPortfolios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbGrSkills" EntityType="Self.tbGrSkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbInterest" EntityType="Self.tbInterest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPortfolios" EntityType="Self.tbPortfolios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSkills" EntityType="Self.tbSkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSliderIcons" EntityType="Self.tbSliderIcons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSocial" EntityType="Self.tbSocial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbStory" EntityType="Self.tbStory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTestimonials" EntityType="Self.tbTestimonials" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

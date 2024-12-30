@@ -1,0 +1,30 @@
+﻿@model IEnumerable<trimatrixlab.Models.PortfolioModel>
+
+@{
+    // Danh sách các hiệu ứng để render ngẫu nhiên
+    var effects = new[] { "mfp-3d-unfold", "mfp-move-from-top", "mfp-move-horizontal", "mfp-with-fade" };
+    int index = 0;
+}
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12 grid @(index == 0 ? "big inLeft" : "inRight")">
+        <figure class="port-effect-scale">
+            <img src="@item.Image" class="img-responsive" alt="portfolio-demo">
+            <figcaption>
+                <h2>@item.TieuDe</h2>
+                <p>@item.Portfolio</p>
+                @*<a href="/Content/images/big-1.jpg" class="popup-image" data-effect="mfp-3d-unfold">
+                    View
+                    more
+                </a>*@
+                <a href="@item.Image" class="popup-image" data-effect="@effects[new Random().Next(effects.Length)]">
+                    View
+                    more
+                </a>
+            </figcaption>
+        </figure>
+    </div>
+}
+

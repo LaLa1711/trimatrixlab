@@ -1,0 +1,94 @@
+﻿@model trimatrixlab.Models.AboutModel
+
+<div id="v-card-holder" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <!-- V-CARD -->
+                <div id="v-card" class="card">
+
+                    <!-- PROFILE PICTURE -->
+                    <div id="profile" class="right">
+                        <img alt="profile-image" class="img-responsive" src="@Model.Image">
+                        <div class="slant"></div>
+
+                        <!--EMPTY PLUS BUTTON-->
+                        <div class="btn-floating btn-large add-btn"><i class="material-icons">add</i></div>
+
+                        <!--VIDEO PLAY BUTTON-->
+                        <!--<div id="button-holder" class="btn-holder">
+                            <div id="play-btn" class="btn-floating btn-large btn-play">
+                                <i id="icon-play" class="material-icons">play_arrow</i>
+                            </div>
+                        </div>-->
+                    </div>
+                    <!--VIDEO CLOSE BUTTON-->
+                    <!--<div id="close-btn" class="btn-floating icon-close">
+                        <i class="fa fa-close"></i>
+                    </div>-->
+
+                    <div class="card-content">
+
+                        <!-- NAME & STATUS -->
+                        <div class="info-headings">
+                            <h4 class="text-uppercase left">@Model.Name</h4>
+                            <h6 class="text-capitalize left">@Model.Descriptions</h6>
+                        </div>
+
+                        <!-- CONTACT INFO -->
+                        <div class="infos">
+                            <ul class="profile-list">
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">email</i></span>
+                                    <span class="content">@Model.Email</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">language</i></span>
+                                    <a href="@Model.Link" class="content" target="_blank">@Model.Link</a>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">home</i></span>
+                                    <span class="content">@Model.Address</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">event</i></span>
+                                    <span class="content">@Model.DateOfBirth.Value.ToString("dd/MM/yyyy")</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">place</i></span>
+                                    <span class="content">@Model.ZipCode</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="title"><i class="material-icons">phone</i></span>
+                                    <span class="content">@Model.Phone</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--LINKS-->
+                        @Html.Action("Social", "Partialview")
+                        <!--<div class="links">-->
+                            <!-- FACEBOOK-->
+                            <!--<a href="#" id="first_one" class="social btn-floating indigo"><i class="fa fa-facebook"></i></a>-->
+                            <!-- TWITTER-->
+                            <!--<a href="#" class="social  btn-floating blue"><i class="fa fa-twitter"></i></a>-->
+                            <!-- GOOGLE+-->
+                            <!--<a href="#" class="social  btn-floating red"><i class="fa fa-google-plus"></i></a>-->
+                            <!-- LINKEDIN-->
+                            <!--<a href="#" class="social  btn-floating blue darken-3"><i class="fa fa-linkedin"></i></a>-->
+                            <!-- RSS-->
+                            <!--<a href="#" class="social  btn-floating orange darken-3"><i class="fa fa-rss"></i></a>
+                        </div>-->
+                    </div>
+                    <!--HTML 5 VIDEO-->
+                    <!-- <video id="html-video" class="video" poster="/Content/images/poster/poster.jpg" controls>
+                        <source src="videos/b.webm" type="video/webm">
+                        <source src="videos/a.mp4" type="video/mp4">
+                    </video>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
